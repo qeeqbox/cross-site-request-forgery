@@ -9,14 +9,6 @@ A threat actor may trick an authenticated or trusted victim into transmitting un
 4. Bob clicks on the exploit URL
 5. Bob's browser loads the session cookie and performs a fund transfer
 
-## Example #2
-1. Threat actor crafts an exploit for a fund transfer from a vulnerable website
-2. Threat actor uploads the exploit to a malicious website
-3. Bob logs in to the vulnerable website (Bob is authenticated - session cookie is saved)
-4. Threat actor tricks Bob into clicking on the malicious website
-5. Bob clicks on the malicious website
-6. Bob's browser loads the session cookie and performs a fund transfer
-
 ## Code
 #### Target-Logic
 ```py
