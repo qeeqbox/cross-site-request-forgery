@@ -41,7 +41,8 @@ def send_money():
 <html>
   <body>
     <form action="https://test.local/send_money" method="POST">
-      <input type="hidden" amount="1000" to_user="ABC-9999"/>
+      <input type="hidden" name="amount" value="1000"/>
+      <input type="hidden" to_user="amount" value="ABC-999"/>
     </form>
     <script>
       document.forms[0].submit();
