@@ -18,7 +18,7 @@ A threat actor may trick an authenticated or trusted victim into transmitting un
 6. Bob's browser loads the session cookie and performs a fund transfer
 
 ## Code
-#### Target Logic
+#### Target-Logic
 ```py
 ...
 @app.route("/send_money", methods=["POST"])
@@ -36,7 +36,7 @@ def send_money():
 ...
 ```
 
-#### Victim Executes
+#### Victim-Executes
 ```html
 <html>
   <body>
@@ -49,6 +49,17 @@ def send_money():
     </script>
   </body>
 </html>
+```
+
+#### Target-In
+```
+amount=1000
+to_user=ABC-999
+```
+
+#### Target-Output
+```json
+{"transfer":"success"}
 ```
 
 ## Impact
