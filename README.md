@@ -12,7 +12,6 @@ A threat actor may trick an authenticated or trusted victim into transmitting un
 ## Code
 #### Target-Logic
 ```py
-...
 @app.route("/send_money", methods=["POST"])
 @login_required
 def send_money():
@@ -25,7 +24,6 @@ def send_money():
          to_user['balance'] += amount
          return make_response({"transfer":"success"}, 200)
    return make_response({"transfer":"failed"}, 200)
-...
 ```
 
 #### Victim-Executes
