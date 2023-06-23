@@ -1,6 +1,6 @@
 <p align="center"> <img src="https://raw.githubusercontent.com/qeeqbox/cross-site-request-forgery/main/cross-site-request-forgery.png"></p>
 
-A threat actor may trick an authenticated or trusted victim into transmitting unauthorized actions on their behalf.
+A threat actor may trick an authenticated or trusted victim into executing unauthorized actions on their behalf.
 
 ## Example #1
 1. Threat actor crafts an exploit URL for a fund transfer from a vulnerable website
