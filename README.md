@@ -21,7 +21,7 @@ Log out
 Use Jane's default credentials (username: jane and password: jane) to login
 <p align="center"> <img src="https://raw.githubusercontent.com/qeeqbox/cross-site-request-forgery/main/content/5.png"></p>
 Jane is no longer able to log in, the password has been changed
-<p align="center"> <img src="https://raw.githubusercontent.com/qeeqbox/cross-site-request-forgery/main/content/5.png"></p>
+<p align="center"> <img src="https://raw.githubusercontent.com/qeeqbox/cross-site-request-forgery/main/content/6.png"></p>
 
 ## Code
 When a user sends a POST request to change their password, the change_password() function will be called
