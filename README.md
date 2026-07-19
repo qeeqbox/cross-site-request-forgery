@@ -15,7 +15,7 @@ Open the webapp in your browser 127.0.0.1:5142
 Use Jane's default credentials (username: jane and password: jane) to login
 <p align="center"> <img src="https://raw.githubusercontent.com/qeeqbox/cross-site-request-forgery/main/content/2.png"></p>
 Run the payload.html, this payload will change Jane's password 
-<p align="center"> <img src="https://raw.githubusercontent.com/qeeqbox/cross-site-request-forgery/main/content/4.png"></p>
+<p align="center"> <img src="https://raw.githubusercontent.com/qeeqbox/cross-site-request-forgery/main/content/3.png"></p>
 Log out
 <p align="center"> <img src="https://raw.githubusercontent.com/qeeqbox/cross-site-request-forgery/main/content/4.png"></p>
 Use Jane's default credentials (username: jane and password: jane) to login
