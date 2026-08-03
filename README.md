@@ -1,6 +1,43 @@
 <p align="center"> <img src="https://raw.githubusercontent.com/qeeqbox/cross-site-request-forgery/main/content/cross-site-request-forgery.svg"></p>
 
-An application does not check whether incoming requests come from a trusted or intended source. A threat actor can exploit this vulnerability by creating a malicious request and deceiving an authenticated user into interacting with it, such as by clicking a link or visiting a harmful webpage. Since the victim's browser automatically includes their valid session cookies, the application may process the unauthorized request as if it were initiated by the legitimate user. This could potentially lead to unauthorized actions being carried out on the victim's account.
+## Cross-Site Request Forgery (CSRF)
+Cross-Site Request Forgery (CSRF) is a web security vulnerability that allows an attacker to trick an authenticated user's browser into sending unauthorized requests to a trusted web application. Because browsers automatically include authentication credentials, such as session cookies, the vulnerable application may process these requests as if the authenticated user intended to perform them.
+
+Unlike Cross-Site Scripting (XSS), which involves injecting malicious scripts that execute in a user's browser, CSRF exploits the user's existing authenticated session to perform unwanted actions on their behalf.
+
+## How CSRF Works
+1. User Authentication: The user logs into a trusted web application and receives an authentication mechanism, such as a session cookie.
+2. Attacker Creates a Malicious Request: The attacker creates a malicious website, email, or link containing a request targeting the trusted application. This request could change account settings, submit a form, or transfer funds.
+3. Victim Visits the Malicious Content: When the authenticated user visits the attacker's website or interacts with the malicious content, their browser sends the forged request to the trusted application.
+4. Server Processes the Request: The browser automatically includes the user's authentication cookies with the request. If the application lacks proper CSRF protections, the server may accept the request as legitimate and execute the requested action.
+
+## Impact
+Successful CSRF attacks can enable attackers to perform unauthorized actions, including:
+
+- Changing account settings
+- Updating email addresses or passwords
+- Making financial transactions
+- Submitting unauthorized forms
+- Deleting or modifying user data
+
+CSRF typically does not allow attackers to directly read sensitive information from the victim's account, as browsers enforce the Same-Origin Policy. Instead, attackers usually manipulate the application state by executing unauthorized actions.
+
+## Mitigation Strategies
+1. Anti-CSRF Tokens: The most common defense is to require a unique, unpredictable token with every state-changing request. The server verifies that the submitted token matches the one stored in the user's session before processing the request.
+2. SameSite Cookies: Configure cookies with the SameSite attribute to limit the ability of cross-site requests to include authentication cookies. Common settings include:
+   - Strict: Cookies are only sent in same-site requests.
+   - Lax: Cookies are restricted for most cross-site requests while allowing normal navigation.
+   - None: Cookies can be sent cross-site but require Secure.
+3. Validate Request Origin: Applications can check the Origin or Referer headers to confirm that requests come from trusted sources. This header validation should be used as an additional measure since headers may not always be available or reliable.
+4. Require Additional Verification for Sensitive Actions: For high-risk operations, request further confirmation, such as:
+   - Password re-entry
+   - Multi-factor authentication (MFA)
+   - Transaction confirmation
+5. Use Secure Cookie Settings: Setting cookie security configurations enhances overall session protection:
+   - HttpOnly: Prevents JavaScript from accessing session cookies.
+   - Secure: Ensures cookies are transmitted only over HTTPS.
+
+## Example
 
 Clone this current repo recursively
 ```sh
