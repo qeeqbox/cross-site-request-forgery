@@ -12,14 +12,12 @@ Unlike Cross-Site Scripting (XSS), which involves injecting malicious scripts th
 4. Server Processes the Request: The browser automatically includes the user's authentication cookies with the request. If the application lacks proper CSRF protections, the server may accept the request as legitimate and execute the requested action.
 
 ## Impact of CSRF
-Successful CSRF attacks can enable attackers to perform unauthorized actions, including:
-
+Successful CSRF exploitation can enable attackers to perform unauthorized actions, such as:
 - Changing account settings
 - Updating email addresses or passwords
 - Making financial transactions
 - Submitting unauthorized forms
 - Deleting or modifying user data
-
 CSRF typically does not allow attackers to directly read sensitive information from the victim's account, as browsers enforce the Same-Origin Policy. Instead, attackers usually manipulate the application state by executing unauthorized actions.
 
 ## CSRF Mitigation Strategies
