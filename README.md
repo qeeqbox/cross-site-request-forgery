@@ -11,7 +11,7 @@ Unlike Cross-Site Scripting (XSS), which involves injecting malicious scripts th
 3. Victim Visits the Malicious Content: When the authenticated user visits the attacker's website or interacts with the malicious content, their browser sends the forged request to the trusted application.
 4. Server Processes the Request: The browser automatically includes the user's authentication cookies with the request. If the application lacks proper CSRF protections, the server may accept the request as legitimate and execute the requested action.
 
-## Impact of CSRF
+## CSRF Impact
 - Changing account settings
 - Updating email addresses or passwords
 - Making financial transactions
@@ -19,7 +19,7 @@ Unlike Cross-Site Scripting (XSS), which involves injecting malicious scripts th
 - Deleting or modifying user data
 CSRF typically does not allow attackers to directly read sensitive information from the victim's account, as browsers enforce the Same-Origin Policy. Instead, attackers usually manipulate the application state by executing unauthorized actions.
 
-## CSRF Mitigation Strategies
+## CSRF Mitigation
 1. Anti-CSRF Tokens: The most common defense is to require a unique, unpredictable token with every state-changing request. The server verifies that the submitted token matches the one stored in the user's session before processing the request.
 2. SameSite Cookies: Configure cookies with the SameSite attribute to limit the ability of cross-site requests to include authentication cookies. Common settings include:
    - Strict: Cookies are only sent in same-site requests.
