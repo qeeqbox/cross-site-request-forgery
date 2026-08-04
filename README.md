@@ -38,7 +38,7 @@ To prevent CSRF vulnerabilities:
    - HttpOnly: Prevents JavaScript from accessing session cookies.
    - Secure: Ensures cookies are transmitted only over HTTPS.
 
-## Example
+## CSRF Example
 
 Clone this current repo recursively
 ```sh
